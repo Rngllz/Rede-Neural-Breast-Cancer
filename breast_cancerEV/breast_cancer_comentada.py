@@ -17,12 +17,12 @@ from tensorflow.keras.models import Sequential
 # Entradas [PREVISORES]
 # 30 características ( 30 colunas)
 # 569 tumores ( 569 linhas)
-X = pd.read_csv('/content/entradas_breast.csv')
+X = pd.read_csv('C:/Users/User/Documents/GitHub/Rede-Neural-Breast-Cancer/base_de_dados/entradas_breast.csv')
 
 # Saidas [RESULTADOS]
 # 1 caracterísitca ( 1 coluna 'é maligno?' 0 = 'Benigno' 1 = 'Maligno')
 # 569 resultados (569 linhas)
-y = pd.read_csv('/content/saidas_breast.csv')
+y = pd.read_csv('C:/Users/User/Documents/GitHub/Rede-Neural-Breast-Cancer/base_de_dados/saidas_breast.csv')
 
 
 #-------------- Configurando o Treinamento e Teste
@@ -45,6 +45,7 @@ y_teste.shape # Resultados 143
 rede_neural = Sequential([
         # 1ª camada (entrada), 30 neurônicos (30 colunas)
         tf.keras.layers.InputLayer(shape = (30,)),
+        tf.keras.layers.Dense(units = 16, activation = 'relu', kernel_initializer = 'random_uniform'),
         # 2ª camada (oculta), 16 neurônios, função de ativação relu e pesos iniciados randomicamente 
         tf.keras.layers.Dense(units = 16, activation = 'relu', kernel_initializer = 'random_uniform'),
         # 3ª camada (saída), 1 neurônio, função de ativação sigmoid

@@ -12,8 +12,8 @@ import tensorflow as tf
 from tensorflow.keras.models import Sequential
 
 
-X = pd.read_csv('/content/entradas_breast.csv')
-y = pd.read_csv('/content/saidas_breast.csv')
+X = pd.read_csv('C:/Users/User/Documents/GitHub/Rede-Neural-Breast-Cancer/base_de_dados/entradas_breast.csv')
+y = pd.read_csv('C:/Users/User/Documents/GitHub/Rede-Neural-Breast-Cancer/base_de_dados/saidas_breast.csv')
 
 X_treinamento, X_teste, y_treinamento, y_teste = train_test_split(X, y, test_size=0.25)
 
@@ -37,7 +37,7 @@ rede_neural.summary()
 
 #-------------- Configurando a Rede Neural
                                                         
-otimizador = tf.keras.optmizers.Adam(
+otimizador = tf.keras.optimizers.Adam(
                                     learning_rate = 0.001, # Taxa de aprendizagem, quanto maior, mais rápido e menos preciso
                                     clipvalue = 0.5        # limita o valor máximo q um peso pode alcançar,
                                     )                      #  isso ajuda quando os pesos estão altos
