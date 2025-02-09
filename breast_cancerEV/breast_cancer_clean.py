@@ -15,8 +15,8 @@ import scikeras
 from scikeras.wrappers import KerasClassifier
 
 
-X = pd.read_csv('C:/Users/User/Documents/GitHub/Rede-Neural-Breast-Cancer/base_de_dados/entradas_breast.csv')
-y = pd.read_csv('C:/Users/User/Documents/GitHub/Rede-Neural-Breast-Cancer/base_de_dados/saidas_breast.csv')
+X = pd.read_csv('C:/Users/lucam/Documents/GitHub/Rede-Neural-Breast-Cancer/base_de_dados/entradas_breast.csv')
+y = pd.read_csv('C:/Users/lucam/Documents/GitHub/Rede-Neural-Breast-Cancer/base_de_dados/saidas_breast.csv')
 
                     
 #-------------- Modelando a Rede Neural
@@ -24,7 +24,7 @@ def criar_rede():
     # Modelando a rede
     k.clear_session()
     rede_neural = Sequential([
-            InputLayer(shape = (30,)),
+            InputLayer(input_shape = (30,)),
             Dense(units = 16, activation = 'relu', kernel_initializer = 'random_uniform'),
             Dropout(rate = 0.2),
             Dense(units = 16, activation = 'relu', kernel_initializer = 'random_uniform'),
